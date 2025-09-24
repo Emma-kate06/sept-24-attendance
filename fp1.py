@@ -1,32 +1,44 @@
-# Import the random module to generate random numbers
 import random
-# Import the time module to add delays (for extra practice)
 import time
 
-# Greeting and getting the user's name
-print("Welcome to the PowerBall Number Generator!")
+# Greeting
+print("Welcome to the PowerBall Lottery Number Generator!")
+
+# Ask for the user's name and store it
 varUserName = input("What is your name? ")
 
-# Greeting the user by their name
-print(f"Hello, {varUserName}! Here are your lucky numbers:")
+# Greet the user by their name
+print(f"Hello, {varUserName}! Let's generate your lucky numbers.\n")
+print("Generating your numbers now...")
+print("...")
+time.sleep(0.25)
 
-# Generating the five white ball numbers
-ball1 = random.randint(1, 69)
-time.sleep(1) # Optional delay
-ball2 = random.randint(1, 69)
-time.sleep(1) # Optional delay
-ball3 = random.randint(1, 69)
-time.sleep(1) # Optional delay
-ball4 = random.randint(1, 69)
-time.sleep(1) # Optional delay
-ball5 = random.randint(1, 69)
-time.sleep(1) # Optional delay
+# Generate the first five numbers (white balls, 1-69) and store them in variables
+number1 = random.randint(1, 69)
+number2 = random.randint(1, 69)
+number3 = random.randint(1, 69)
+number4 = random.randint(1, 69)
+number5 = random.randint(1, 69)
 
-# Generating the one red Powerball number
-powerball = random.randint(1, 26)
+# Print the first five numbers with a small delay between each
+print(f"White balls: {number1}", end="")
+time.sleep(0.25)
+print(f"  {number2}", end="")
+time.sleep(0.25)
+print(f"  {number3}", end="")
+time.sleep(0.25)
+print(f"  {number4}", end="")
+time.sleep(0.25)
+print(f"  {number5}", end="")
+time.sleep(0.25)
 
-# Printing the numbers with the specified spacing
-print(f"{ball1}  {ball2}  {ball3}  {ball4}  {ball5}    {powerball}")
+# Generate the sixth number (red ball, 1-26) and store it
+red_ball = random.randint(1, 26)
+
+# Print the final number in red with a larger space
+# The ANSI escape codes "\033[91m" and "\033[0m" are used to change text color.
+# 91m is the code for bright red, and 0m resets the color.
+print(f"    \033[91mRed ball: {red_ball}\033[0m\n")
 
 # Farewell message
-print(f"\nGood luck, {varUserName}!")
+print("Good luck with your ticket!")
